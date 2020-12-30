@@ -21,7 +21,7 @@
 
 Seccion para crear servicios
 
-<form action="{{url('/servicios')}}" class="form-horinzontal" method="post" enctype="multipart/form-data">
+<form action="{{url('/Servicios')}}" class="form-horinzontal" method="post" enctype="multipart/form-data">
 {{csrf_field()}}
 @include('servicios.form',['Modo'=>'crear'])
 
