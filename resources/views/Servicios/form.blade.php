@@ -15,9 +15,9 @@ value="{{isset($servicio->titulo)?$servicio->titulo:old('titulo')}}">
 
 
 <div class="form-group">
-<label for="Descripcion"  class="control-label">{{'Descripcion'}}</label>
-<input type="text" class="form-control {{$errors->has('Descripcion')?'is-invalid':''}}" name="Descripcion" id="Descripcion" 
-value="{{isset($servicio->Descripcion)?$servicio->Descripcion:old('Descripcion')}}">
+<label for="descripcion"  class="control-label">{{'Descripcion'}}</label>
+<input type="text" class="form-control {{$errors->has('descripcion')?'is-invalid':''}}" name="descripcion" id="descripcion" 
+value="{{isset($servicio->descripcion)?$servicio->descripcion:old('descripcion')}}">
 {!! $errors->first('Descripcion','<div class="invalid-feedback">:message</div>')!!}
 </div>
 
@@ -31,10 +31,10 @@ value="{{isset($servicio->precio)?$servicio->precio:old('precio')}}">
 
 <div class="form-group">
 <label for="foto" class="control-label">{{'Foto'}}</label>
-@if(isset($servicio->Foto))
+@if(isset($servicio->foto))
 <br/>
 
-<img class="img-thumbnail img-fluid" src="{{asset('storage').'/'.$servicio->Foto}}" alt="" width="150">
+<img class="img-thumbnail img-fluid" src="{{asset('storage').'/'.$servicio->foto}}" alt="" width="150">
 <br/>
 @endif
 <input class="form-control {{$errors->has('foto')?'is-invalid':''}}" type="file" name="foto" id="foto" value="">
