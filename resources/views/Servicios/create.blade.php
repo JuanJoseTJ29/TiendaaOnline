@@ -19,7 +19,7 @@ value="{{isset($servicio->titulo)?$servicio->titulo:old('titulo')}}">
 
 
 <div class="form-group">
-<label for="descripcion"  class="control-label">{{'Descripcion'}}</label>
+<label for="descripcion"  class="control-label">{{'Descripccion'}}</label>
 <input type="text" class="form-control {{$errors->has('descripcion')?'is-invalid':''}}" name="descripcion" id="descripcion" 
 value="{{isset($servicio->descripcion)?$servicio->descripcion:old('descripcion')}}">
 {!! $errors->first('Descripcion','<div class="invalid-feedback">:message</div>')!!}
