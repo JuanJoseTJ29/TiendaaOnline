@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServiciosTable extends Migration
+class CreateRatingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateServiciosTable extends Migration
      */
     public function up()
     {
-        Schema::create('servicios', function (Blueprint $table) {
+        Schema::create('ratings', function (Blueprint $table) {
             $table->id();
 
-            $table->bigInteger('profile_id')->unsigned();
-            
-            $table->string('titulo');
-            $table->text('descripcion');
-            $table->double('precio', 8, 2);
-            $table->string('foto');
+            $table->bigInteger('type_rating_id')->unsigned();
+            $table->text('comment')->nullable();
+
+            $table->foreign('type_rating_id')->references('id')->on('type_ratings')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -34,6 +32,6 @@ class CreateServiciosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('servicios');
+        Schema::dropIfExists('ratings');
     }
 }
